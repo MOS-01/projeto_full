@@ -4,6 +4,8 @@ import {
   PrimaryGeneratedColumn,
   ManyToOne,
   CreateDateColumn,
+  UpdateDateColumn,
+  DeleteDateColumn,
 } from "typeorm";
 import { User } from "./user.entities";
 
@@ -19,12 +21,18 @@ class Contact {
   email: string;
 
   @Column()
-  telephone: string;
+  phone: string;
 
   @CreateDateColumn({ type: "date" })
   creatdAd: string;
 
-  @ManyToOne(() => User)
+  @UpdateDateColumn({ type: "date" })
+  updatedAt: string;
+
+  @DeleteDateColumn({ type: "date" })
+  deletedAt: string;
+
+  @ManyToOne(() => User, (user) => user.contacts)
   user: User;
 }
 
