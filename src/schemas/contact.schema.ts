@@ -11,7 +11,7 @@ const contactSchema = z.object({
       new RegExp(/^\([0-9]{2}\)[0-9]{5}-[0-9]{4}$/),
       "Invalid format, it (99)94444-4444"
     ),
-  creatdAt: z.string(),
+  createdAt: z.string(),
   updatedAt: z.string(),
   deletedAt: z.string().nullable(),
   user: returnUserSchema,
@@ -19,7 +19,7 @@ const contactSchema = z.object({
 
 const createContactSchema = contactSchema.omit({
   id: true,
-  creatdAt: true,
+  createdAt: true,
   updatedAt: true,
   deletedAt: true,
   user: true,

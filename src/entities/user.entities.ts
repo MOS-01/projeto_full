@@ -19,20 +19,20 @@ class User {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column({ type: "varchar", length: 140 })
+  @Column({ type: "varchar", length: "140" })
   name: string;
 
-  @Column({ type: "varchar", length: 45, unique: true })
+  @Column({ type: "varchar", length: "45", unique: true })
   email: string;
 
-  @Column({ type: "varchar", length: 14 })
+  @Column({ type: "varchar", length: "14" })
   phone: string;
 
-  @Column({ type: "varchar", length: 120 })
+  @Column({ type: "varchar", length: "120" })
   password: string;
 
   @CreateDateColumn({ type: "date" })
-  creatdAt: string;
+  createdAt: string;
 
   @UpdateDateColumn({ type: "date" })
   updatedAt: string;

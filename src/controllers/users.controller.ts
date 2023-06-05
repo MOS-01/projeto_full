@@ -61,7 +61,7 @@ const retriveContactsUserController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const userId: string = res.locals.user.id;
+  const userId: string = res.locals.userTokenInfos.id;
 
   const listConstacts: TreturnListaContact = await retriveContactsUserService(
     userId
@@ -74,7 +74,7 @@ const retriveProfileUserController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const userId: string = res.locals.user.id;
+  const userId: string = res.locals.userTokenInfos.id;
 
   const user: TuserReturn = await retriveProfileUserService(userId);
 

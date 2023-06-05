@@ -10,7 +10,7 @@ export const ValidatedContactExistsMiddleware = async (
   next: NextFunction
 ): Promise<void> => {
   const email: string = req.body.email;
-  const userId: string = res.locals.userTokenInfos.userId;
+  const userId: string = res.locals.userTokenInfos.id;
 
   const contactRepository: Repository<Contact> =
     AppDataSource.getRepository(Contact);

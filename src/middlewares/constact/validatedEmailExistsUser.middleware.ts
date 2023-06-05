@@ -33,7 +33,7 @@ export const validatedEmailExistUserMiddleware = async (
 
       if (req.method === "PATCH") {
         if (!(req.params.id === findEmailExists.id)) {
-          throw new AppError('Contact already exists",409');
+          throw new AppError("Contact already exists", 409);
         }
       }
     }

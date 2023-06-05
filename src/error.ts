@@ -25,12 +25,6 @@ export const handleError = (
     return res.status(400).json({ message: err.flatten().fieldErrors });
   }
 
-  if (err instanceof TypeORMError) {
-  }
-
-  if (err instanceof Error) {
-  }
-
   console.log(err);
 
   return res.status(500).json({ message: "Internal Server Error" });

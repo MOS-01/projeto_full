@@ -15,7 +15,7 @@ const createContactController = async (
   res: Response
 ): Promise<Response> => {
   const body: TcreateContact = req.body;
-  const userId: string = res.locals.user.id;
+  const userId: string = res.locals.userTokenInfos.token;
 
   const newContact: TreturnContact = await createContactService(userId, body);
 

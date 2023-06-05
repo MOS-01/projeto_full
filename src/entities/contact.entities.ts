@@ -9,22 +9,22 @@ import {
 } from "typeorm";
 import { User } from "./user.entities";
 
-@Entity("constacts")
+@Entity("contacts")
 class Contact {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
-  @Column()
+  @Column({ type: "varchar", length: "140" })
   name: string;
 
-  @Column()
+  @Column({ type: "varchar", length: "45" })
   email: string;
 
-  @Column()
+  @Column({ type: "varchar", length: "14" })
   phone: string;
 
   @CreateDateColumn({ type: "date" })
-  creatdAd: string;
+  createdAt: string;
 
   @UpdateDateColumn({ type: "date" })
   updatedAt: string;
